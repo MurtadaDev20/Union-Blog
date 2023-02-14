@@ -1,0 +1,16 @@
+<?php
+
+include 'function/config.php';
+
+?>
+<?php
+
+if (isset($_GET['id'])) {
+    $del_id = $_GET['id'];
+    $query = "DELETE from contact where id ='$del_id'";
+    $result = mysqli_query($con, $query);
+
+    if ($result) {
+        header('location:contact.php');
+    }
+}
